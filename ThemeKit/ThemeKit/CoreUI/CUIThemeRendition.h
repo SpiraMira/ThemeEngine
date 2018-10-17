@@ -7,21 +7,29 @@
 #import <CoreUI/CUIRenditionKey.h>
 
 @class CUIThemeGradient, CUIThemeDataEffectPreset, CUIRenditionMetrics, CUIRenditionSliceInformation;
-// Not exported
+
 @interface CUIThemeRendition : NSObject
 {
-    struct renditionkeytoken _stackKey[16];
+    struct renditionkeytoken _stackKey[18];
     struct renditionkeytoken *_key;
     long long _type;
     unsigned int _subtype;
     unsigned int _scale;
-    struct {
+    
+    int _exifOrientation;
+    int _blendMode;
+    
+    struct cuithemerenditionrenditionflags {
         unsigned int isHeaderFlaggedFPO:1;
         unsigned int isExcludedFromContrastFilter:1;
         unsigned int isVectorBased:1;
         unsigned int isOpaque:1;
         unsigned int bitmapEncoding:4;
-        unsigned int reserved:24;
+        unsigned int optOutOfThinning:1;
+        unsigned int isFlippable:1;
+        unsigned int isTintable:1;
+        unsigned int preservedVectorRepresentation:1;
+        unsigned int reserved:20;
     } _renditionFlags;
     CoreThemeTemplateRenderingMode _templateRenderingMode;
     long long _artworkStatus;
@@ -29,8 +37,45 @@
     NSString *_name;
     NSData *_srcData;
     long long _validLookGradation;
+
+//    long long _templateRenderingMode;
+//    long long _artworkStatus;
+//    unsigned long long _colorSpaceID;
+//    NSString *_name;
+//    NSData *_srcData;
+//    long long _validLookGradation;
+    
+    double _opacity;
     NSString *_utiType;
+    struct CGImage *_uncroppedImage;
+    struct CGSize _physicalSizeInMeters;
+    NSDictionary *_properties;
 }
+
+// Not exported
+//@interface CUIThemeRendition : NSObject
+//{
+//    struct renditionkeytoken _stackKey[16];
+//    struct renditionkeytoken *_key;
+//    long long _type;
+//    unsigned int _subtype;
+//    unsigned int _scale;
+//    struct {
+//        unsigned int isHeaderFlaggedFPO:1;
+//        unsigned int isExcludedFromContrastFilter:1;
+//        unsigned int isVectorBased:1;
+//        unsigned int isOpaque:1;
+//        unsigned int bitmapEncoding:4;
+//        unsigned int reserved:24;
+//    } _renditionFlags;
+//    CoreThemeTemplateRenderingMode _templateRenderingMode;
+//    long long _artworkStatus;
+//    unsigned long long _colorSpaceID;
+//    NSString *_name;
+//    NSData *_srcData;
+//    long long _validLookGradation;
+//    NSString *_utiType;
+//}
 
 + (NSString *)displayNameForRenditionType:(CoreThemeType)type;
 + (NSData *)filteredCSIDataFromBaseCSIData:(NSData *)csiData;

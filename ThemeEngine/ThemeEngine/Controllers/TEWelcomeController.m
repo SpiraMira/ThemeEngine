@@ -22,7 +22,7 @@
     [super windowDidLoad];
     self.backgroundView.backgroundColor = [NSColor themeEnginePurpleColor];
     
-    self.window.styleMask       = NSBorderlessWindowMask;
+    self.window.styleMask       = NSWindowStyleMaskBorderless;
     self.window.backgroundColor = [NSColor clearColor];
     self.window.opaque          = NO;
     

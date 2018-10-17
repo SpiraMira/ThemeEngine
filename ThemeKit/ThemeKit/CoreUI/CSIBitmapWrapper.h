@@ -8,16 +8,41 @@
 
 @interface CSIBitmapWrapper : NSObject
 {
-    CGContextRef _bitmapContext;
+    struct CGContext *_bitmapContext;
     NSData *_pixelData;
-    NSData *_rawData;
-    CSIPixelFormat _pixelFormat;
+    unsigned int _pixelFormat;
     unsigned int _width;
     unsigned int _height;
     unsigned long long _rowbytes;
     BOOL _allowsMultiPassEncoding;
+    BOOL _allowsOptimalRowbytesPacking;
+    BOOL _allowsCompactCompression;
+    BOOL _allowsPaletteImageCompression;
+    BOOL _allowsHevcCompression;
+    BOOL _allowsDeepmapImageCompression;
+    BOOL _flipped;
+    struct CGImage *_sourceImage;
+    long long _texturePixelFormat;
     unsigned int _imageAlpha;
+    double _compressionQuality;
+    long long _compressionType;
+    unsigned long long _colorSpaceID;
+    long long _textureInterpretation;
+    int _exifOrientation;
 }
+
+//@interface CSIBitmapWrapper : NSObject
+//{
+//    CGContextRef _bitmapContext;
+//    NSData *_pixelData;
+//    NSData *_rawData;
+//    CSIPixelFormat _pixelFormat;
+//    unsigned int _width;
+//    unsigned int _height;
+//    unsigned long long _rowbytes;
+//    BOOL _allowsMultiPassEncoding;
+//    unsigned int _imageAlpha;
+//}
 
 @property(nonatomic) CSIPixelFormat pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property BOOL allowsMultiPassEncoding; // @synthesize allowsMultiPassEncoding=_allowsMultiPassEncoding;

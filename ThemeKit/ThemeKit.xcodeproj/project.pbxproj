@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CA50BA221777E6F00D683B2 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA50BA021777E6F00D683B2 /* Quartz.framework */; };
+		8CA50BA321777E6F00D683B2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA50BA121777E6F00D683B2 /* QuartzCore.framework */; };
 		FA092C841B2C1C7600D04F6D /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA092C831B2C1C7600D04F6D /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA514C381B3471DC002CBF5A /* TKLayoutInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = FA514C361B3471DC002CBF5A /* TKLayoutInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA514C391B3471DC002CBF5A /* TKLayoutInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA514C371B3471DC002CBF5A /* TKLayoutInformation.m */; };
@@ -97,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8CA50BA021777E6F00D683B2 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		8CA50BA121777E6F00D683B2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FA092C7E1B2C1C7600D04F6D /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA092C821B2C1C7600D04F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA092C831B2C1C7600D04F6D /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA50BA221777E6F00D683B2 /* Quartz.framework in Frameworks */,
+				8CA50BA321777E6F00D683B2 /* QuartzCore.framework in Frameworks */,
 				FA606C2A1B2C1D5000F24960 /* CoreUI.framework in Frameworks */,
 				FA606C621B2C958400F24960 /* Bom.framework in Frameworks */,
 			);
@@ -201,6 +207,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CA50B9F21777E6F00D683B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CA50BA021777E6F00D683B2 /* Quartz.framework */,
+				8CA50BA121777E6F00D683B2 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA092C741B2C1C7600D04F6D = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +223,7 @@
 				FA606C291B2C1D5000F24960 /* CoreUI.framework */,
 				FA092C801B2C1C7600D04F6D /* ThemeKit */,
 				FA092C7F1B2C1C7600D04F6D /* Products */,
+				8CA50B9F21777E6F00D683B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -617,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -669,7 +685,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";

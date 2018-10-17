@@ -8,21 +8,80 @@
 #import <CoreUI/CSIBitmapWrapper.h>
 
 @class CUIPSDGradient, CUIShapeEffectPreset;
+
 @interface CSIGenerator : NSObject
 {
-    NSMutableArray *_slices; // 0x0
-    NSMutableArray *_bitmaps; // 0x8
-    NSMutableArray *_metrics; // 0x10
-    BOOL _allowsMultiPassEncoding; // 0x18
-    short _layout; // 0x20
-    NSData *_rawData; // 0x28
-    int _exifOrientation; // 0x30
-    unsigned long long _rowbytes; // 0x38
-    NSString *_assetPackIdentifier; // 0x40
-    NSSet *_externalTags; // 0x48
-    CGRect _externalReferenceFrame; // 0x50
-    unsigned short _linkLayout; // 0x58
+    struct CGSize _size;
+    NSString *_name;
+    NSString *_utiType;
+    struct CGSize _physicalSizeInMeters;
+    NSMutableArray *_slices;
+    NSMutableArray *_bitmaps;
+    NSMutableArray *_metrics;
+    NSMutableArray *_layerReferences;
+    BOOL _isFPOHint;
+    BOOL _isExcludedFromFilter;
+    BOOL _isVectorBased;
+    long long _templateRenderingMode;
+    BOOL _allowsMultiPassEncoding;
+    BOOL _allowsOptimalRowbytesPacking;
+    BOOL _allowsPaletteImageCompression;
+    BOOL _allowsHevcCompression;
+    BOOL _allowsDeepmapImageCompression;
+    BOOL _optOutOfThinning;
+    BOOL _preservedVectorRepresentation;
+    BOOL _isFlippable;
+    BOOL _isTintable;
+    short _colorSpaceID;
+    short _layout;
+    unsigned int _scaleFactor;
+    CUIPSDGradient *_gradient;
+    NSData *_rawData;
+    CUIShapeEffectPreset *_effectPreset;
+    int _blendMode;
+    double _opacity;
+    NSDate *_modtime;
+    unsigned int _pixelFormat;
+    int _exifOrientation;
+    unsigned long long _rowbytes;
+    NSString *_assetPackIdentifier;
+    NSSet *_externalTags;
+    struct CGRect _externalReferenceFrame;
+    unsigned short _linkLayout;
+    struct CGSize _originalUncroppedSize;
+    struct CGRect _alphaCroppedFrame;
+    NSArray *_containedNamedElements;
+    double _compressionQuality;
+    long long _compressionType;
+    BOOL _isCubeMap;
+    long long _textureFormat;
+    long long _textureInterpretation;
+    NSMutableArray *_mipReferences;
+    BOOL _textureOpaque;
+    NSArray *_colorComponents;
+    NSString *_systemColorName;
+    NSDictionary *_sizesByIndex;
+    BOOL _clampMetrics;
+    NSDictionary *_renditionProperties;
+    int _objectVersion;
+    // Error parsing type: {?="columns"[4]}, name: _transformation
 }
+
+//@interface CSIGenerator : NSObject
+//{
+//    NSMutableArray *_slices; // 0x0
+//    NSMutableArray *_bitmaps; // 0x8
+//    NSMutableArray *_metrics; // 0x10
+//    BOOL _allowsMultiPassEncoding; // 0x18
+//    short _layout; // 0x20
+//    NSData *_rawData; // 0x28
+//    int _exifOrientation; // 0x30
+//    unsigned long long _rowbytes; // 0x38
+//    NSString *_assetPackIdentifier; // 0x40
+//    NSSet *_externalTags; // 0x48
+//    CGRect _externalReferenceFrame; // 0x50
+//    unsigned short _linkLayout; // 0x58
+//}
 
 + (int)fileEncoding;
 + (void)setFileEncoding:(int)arg1;

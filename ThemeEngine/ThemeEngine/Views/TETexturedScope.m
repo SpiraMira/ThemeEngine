@@ -70,7 +70,7 @@ static NSGradient *selectionGradient = nil;
             [[[NSColor blackColor] colorWithAlphaComponent:0.2] set];
             NSRect highlightRect = segmentRect;
             highlightRect.size.width += 1;
-            NSRectFillUsingOperation(highlightRect, NSCompositeSourceOver);
+            NSRectFillUsingOperation(highlightRect, NSCompositingOperationSourceOver);
         }
     }
 
