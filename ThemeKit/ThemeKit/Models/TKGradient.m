@@ -313,11 +313,11 @@
 }
 
 - (void)drawInRect:(CGRect)rect {
-    [self drawInRect:rect withContext:[[NSGraphicsContext currentContext] graphicsPort]];
+    [self drawInRect:rect withContext:[[NSGraphicsContext currentContext] CGContext]];
 }
 
 - (void)drawInRect:(CGRect)rect atAngle:(CGFloat)angle {
-    [self drawInRect:rect atAngle:self.angle withContext:[[NSGraphicsContext currentContext] graphicsPort]];
+    [self drawInRect:rect atAngle:self.angle withContext:[[NSGraphicsContext currentContext] CGContext]];
 }
 
 - (void)drawInRect:(CGRect)rect relativeCenterPosition:(CGPoint)relativeCenterPosition {

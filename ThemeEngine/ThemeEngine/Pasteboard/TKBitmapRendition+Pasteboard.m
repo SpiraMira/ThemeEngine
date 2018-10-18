@@ -34,10 +34,10 @@ static NSString *const TEBitmapKeyPayload           = @"payload";
 
 - (id)pasteboardPropertyListForType:(NSString *)type {
     if (IS(kUTTypePNG) || IS(kUTTypeImage)) {
-        return [self.image representationUsingType:NSPNGFileType properties:@{}];
+        return [self.image representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
         
     } else if (IS(kUTTypeTIFF)) {
-        return [self.image representationUsingType:NSTIFFFileType properties:@{ NSImageCompressionMethod: @(NSTIFFCompressionLZW) }];
+        return [self.image representationUsingType:NSBitmapImageFileTypeTIFF properties:@{ NSImageCompressionMethod: @(NSTIFFCompressionLZW) }];
         
     } else if ([type isEqualToString:TEBitmapPasteboardType]) {
         // Layout information

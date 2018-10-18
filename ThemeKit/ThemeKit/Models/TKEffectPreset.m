@@ -176,7 +176,7 @@
         positions[1].x += rep.pixelsWide / 2 - position.x / 2;
         positions[1].y += rep.pixelsHigh / 2 - position.y / 2 - 6;
         
-        CTFontDrawGlyphs(font, glyphs, positions, 2, ctx.graphicsPort);
+        CTFontDrawGlyphs(font, glyphs, positions, 2, ctx.CGContext);
     });
     
     return rep;

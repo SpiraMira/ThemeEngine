@@ -157,7 +157,7 @@
 
         // RGBA to BGRA
         if ((format & NSAlphaFirstBitmapFormat) != NSAlphaFirstBitmapFormat) {
-            if ((format & NS32BitBigEndianBitmapFormat) == NS32BitBigEndianBitmapFormat) {
+            if ((format & NSBitmapFormatThirtyTwoBitBigEndian) == NS32BitBigEndianBitmapFormat) {
                 // ABGR -> BGRA
                 const uint8_t big[4] = { 3, 0, 1, 2 };
                 map = big;

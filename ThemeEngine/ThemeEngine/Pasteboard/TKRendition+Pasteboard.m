@@ -77,7 +77,7 @@ NSString *TERenditionHashPBType = @"com.alexzielenski.themeengine.rendition.hash
                                                                                                   self.previewImage.size.height)];
         [self.previewImage unlockFocus];
         
-        return [snapshot representationUsingType:NSPNGFileType properties:@{}];
+        return [snapshot representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
         
     } else if (IS(kUTTypeTIFF) || IS(kUTTypeImage)) {
         return [self.previewImage TIFFRepresentationUsingCompression:NSTIFFCompressionLZW factor:1.0];

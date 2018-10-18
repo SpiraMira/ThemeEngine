@@ -66,7 +66,7 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
                                      drawingHandler:^BOOL(NSRect dstRect) {
                                          [CATransaction begin];
                                          [CATransaction setDisableActions: YES];
-                                         [layer renderInContext:[[NSGraphicsContext currentContext] graphicsPort]];
+                                         [layer renderInContext:[[NSGraphicsContext currentContext] CGContext]];
                                          [CATransaction commit];
                                          return YES;
                                      }];

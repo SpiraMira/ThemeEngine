@@ -56,7 +56,7 @@
         NSArray *slices = nil;
         NSBitmapImageRep *packed = [self packedRepresentationUsingImages:[renditions valueForKeyPath:@"image"] slices:&slices];
         NSURL *url = [tmpURL URLByAppendingPathComponent:[[[NSUUID UUID] UUIDString] stringByAppendingPathExtension:@"png"]];
-        [[packed representationUsingType:NSPNGFileType properties:@{}] writeToURL:url atomically:NO];
+        [[packed representationUsingType:NSBitmapImageFileTypePNG properties:@{}] writeToURL:url atomically:NO];
         
         [[NSWorkspace sharedWorkspace] openURLs:@[ url ]
                         withAppBundleIdentifier:@"com.adobe.Photoshop"
@@ -149,7 +149,7 @@
                 }
                 
                 NSBitmapImageRep *image = [[NSBitmapImageRep alloc] initWithCGImage:slice];
-                [[image representationUsingType:NSPNGFileType properties:@{}] writeToFile:[@"/Users/Alex/Desktop/slices" stringByAppendingFormat:@"/%ld.png", (long)i] atomically:NO];
+                [[image representationUsingType:NSBitmapImageFileTypePNG properties:@{}] writeToFile:[@"/Users/Alex/Desktop/slices" stringByAppendingFormat:@"/%ld.png", (long)i] atomically:NO];
                 [rend setValue:image forKey:@"image"];
                 CGImageRelease(slice);
             }
