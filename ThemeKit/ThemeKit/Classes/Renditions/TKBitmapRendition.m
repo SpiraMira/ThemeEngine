@@ -156,7 +156,7 @@
         const uint8_t *map = NULL;
 
         // RGBA to BGRA
-        if ((format & NSBitmapFormatAlphaFirst) != NSAlphaFirstBitmapFormat) {
+        if ((format & NSBitmapFormatAlphaFirst) != NSBitmapFormatAlphaFirst) {
             if ((format & NSBitmapFormatThirtyTwoBitBigEndian) == NSBitmapFormatThirtyTwoBitBigEndian) {
                 // ABGR -> BGRA
                 const uint8_t big[4] = { 3, 0, 1, 2 };
@@ -168,7 +168,7 @@
             }
         } else {
             // ARGB to BGRA
-            if ((format & NSBitmapFormatThirtyTwoBitBigEndian) == NS32BitBigEndianBitmapFormat) {
+            if ((format & NSBitmapFormatThirtyTwoBitBigEndian) == NSBitmapFormatThirtyTwoBitBigEndian) {
                 // BGRA -> BGRA
                 const uint8_t big[4] = { 0, 1, 2, 3 };
                 map = big;
@@ -197,7 +197,7 @@
                                        kvImageNoFlags);
         
         // Unpremultiply that alpha
-        if ((format & NSBitmapFormatAlphaNonpremultiplied) != NSAlphaNonpremultipliedBitmapFormat) {
+        if ((format & NSBitmapFormatAlphaNonpremultiplied) != NSBitmapFormatAlphaNonpremultiplied) {
             src.data = newData;
             vImageUnpremultiplyData_ARGB8888(&src,
                                              &dst,
