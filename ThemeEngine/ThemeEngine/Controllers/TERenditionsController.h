@@ -23,7 +23,7 @@
 - (IBAction)receiveFromEditor:(id)sender;
 - (IBAction)sendToEditor:(id)sender;
 
-- (IBAction)addRendition:(id)sender;
+//- (IBAction)addRendition:(id)sender;
 - (IBAction)removeSelection:(id)sender;
 
 @end

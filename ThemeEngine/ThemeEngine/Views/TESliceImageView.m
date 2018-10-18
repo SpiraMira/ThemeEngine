@@ -90,7 +90,7 @@ static const CGFloat sliceSpaceWidth = 2.0;
 
 - (void)_initialize {
     self.layer          = [CALayer layer];
-    self.layer.delegate = self;
+    self.layer.delegate = (id<CALayerDelegate>)self;
     self.wantsLayer     = YES;
     self.drawsChecker = YES;
     self.handleLayer = [CALayer layer];
@@ -590,7 +590,8 @@ static const CGFloat sliceSpaceWidth = 2.0;
         } else if ([inKeyPath isEqualToString:@"bottomHandlePosition"]) {
             newValue = [self constrainBottomValue:oldValue];
             
-        }
+        } else
+            newValue = oldValue;
         
         *ioValue = [NSNumber numberWithDouble:newValue];
     }

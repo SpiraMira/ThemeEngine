@@ -109,7 +109,7 @@ const void *kTEGradientEditorLayoutContext     = &kTEGradientEditorLayoutContext
     self.gradientLayer                  = [CALayer layer];
     self.gradientLayer.cornerRadius     = 8.0;
     self.gradientLayer.backgroundColor  = [[NSColor checkerPattern] CGColor];
-    self.gradientLayer.delegate         = self;
+    self.gradientLayer.delegate         = (id<CALayerDelegate>)self;
     self.gradientLayer.frame            = self.layer.bounds;
     self.gradientLayer.autoresizingMask = kCALayerNotSizable;
     

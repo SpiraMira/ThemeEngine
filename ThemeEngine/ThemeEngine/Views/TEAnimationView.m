@@ -89,7 +89,7 @@
     self.layer.contentsGravity = kCAGravityCenter;
     self.layer.bounds = self.bounds;
     self.layer.autoresizingMask = kCALayerHeightSizable | kCALayerWidthSizable | kCALayerMinXMargin | kCALayerMinYMargin;
-    self.layer.delegate = self;
+    self.layer.delegate = (id<CALayerDelegate>)self;
     self.framesPerSecond = 23;
     
     self.spriteLayer = (TESpriteLayer *)self.layer;
