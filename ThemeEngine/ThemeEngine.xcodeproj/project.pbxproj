@@ -742,11 +742,12 @@
 				);
 				INFOPLIST_FILE = ThemeEngine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = (
 					"-Wno-profile-instr-unprofiled",
 					"-Wno-profile-instr-out-of-date",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexzielenski.ThemeEngine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spiramira.ThemeEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../ThemeKit/**";
@@ -771,11 +772,12 @@
 				);
 				INFOPLIST_FILE = ThemeEngine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = (
 					"-Wno-profile-instr-unprofiled",
 					"-Wno-profile-instr-out-of-date",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexzielenski.ThemeEngine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spiramira.ThemeEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../ThemeKit/**";
