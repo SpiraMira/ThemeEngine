@@ -60,9 +60,5 @@
 	<string>NSApplication</string>
 	<key>OPBlacklisted</key>
 	<true/>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
-	<key>SUFeedURL</key>
-	<string>http://updates.alexzielenski.com/ThemeEngine/appcast.xml</string>
 </dict>
 </plist>

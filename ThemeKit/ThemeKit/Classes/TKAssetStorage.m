@@ -134,6 +134,7 @@ NSString *const TKAssetStorageDidFinishLoadingNotification = @"TKAssetStorageDid
                 CUIRenditionKey *key = [CUIRenditionKey renditionKeyWithKeyList:keyList];
                 TKRendition *rendition = [TKRendition renditionWithCSIData:csiData renditionKey:key];
                 if (!rendition.rendition) {
+                    NSLog(@"Need to Fix rendition with key: %@", key);
                     NSString *name;
                     CUIThemeRendition *cui = [TKVerifyTool fixedRenditionForCSIData:csiData
                                                                                 key:key
@@ -144,6 +145,7 @@ NSString *const TKAssetStorageDidFinishLoadingNotification = @"TKAssetStorageDid
                         NSLog(@"Failed to automatically fix rendition with name: %@", name);
                         return;
                     } else {
+                        NSLog(@"Fixed rendition with name: %@", name);
                         rendition = [TKRendition renditionWithCUIRendition:cui csiData:csiData key:key];
                     }
                 }

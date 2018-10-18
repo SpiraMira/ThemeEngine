@@ -24,6 +24,17 @@
     NSMutableArray *_layers;
 }
 
+- (BOOL)edgesOnly;
+- (BOOL)isScaled;
+- (BOOL)isTiled;
+- (id)sliceInformation;
+- (id)metrics;
+- (id)layerReferences;
+- (id)maskForSliceIndex:(long long)arg1;
+- (id)imageForSliceIndex:(long long)arg1;
+- (struct CGImage *)unslicedImage;
+- (void)dealloc;
+
 - (unsigned long long)sourceRowbytes;
 - (void)setSharedBlockData:(_CSIRenditionBlockData *)arg1;
 - (_CSIRenditionBlockData *)copySharedBlockDataWithPixelFormat:(int)arg1;

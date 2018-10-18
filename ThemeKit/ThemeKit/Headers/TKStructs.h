@@ -45,6 +45,29 @@
  Reference key being the key of the asset whose pixel data contains this image
  */
 
+//struct _csiheader {
+//    unsigned int _field1;
+//    unsigned int _field2;
+//    unsigned int _field3;
+//    unsigned int _field4;
+//    unsigned int _field5;
+//    unsigned int _field6;
+//    unsigned int _field7;
+//    unsigned int :4;
+//    unsigned int :28;
+//    struct _csimetadata {
+//        unsigned int _field1;
+//        unsigned short _field2;
+//        unsigned short _field3;
+//        char _field4[128];
+//    } _field8;
+//    unsigned int _field9;
+//    struct _csibitmaplist {
+//        unsigned int _field1;
+//        unsigned int _field2[0];
+//    } _field10;
+//};
+
 // CSI Stands for Core Structured Image
 struct csiheader {
     unsigned int magic; // CTSI – Core Theme Structured Image
