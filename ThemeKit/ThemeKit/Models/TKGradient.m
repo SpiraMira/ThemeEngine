@@ -321,7 +321,7 @@
 }
 
 - (void)drawInRect:(CGRect)rect relativeCenterPosition:(CGPoint)relativeCenterPosition {
-    [self drawInRect:rect relativeCenterPosition:relativeCenterPosition withContext:[[NSGraphicsContext currentContext] graphicsPort]];
+    [self drawInRect:rect relativeCenterPosition:relativeCenterPosition withContext:[[NSGraphicsContext currentContext] CGContext]];
 }
 
 - (void)drawInRect:(CGRect)rect withContext:(CGContextRef)context {
