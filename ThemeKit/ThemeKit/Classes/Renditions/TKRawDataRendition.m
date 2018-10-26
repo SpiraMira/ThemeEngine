@@ -8,6 +8,16 @@
 
 #import "TKRawDataRendition.h"
 #import "TKRendition+Private.h"
+
+#import "CALayer+PLHierarchy.h"
+
+#import <NSLogger/NSLogger.h>
+#import <PEGKit/PEGKit.h>
+
+// PAK 2018-10-26 : Added CALayer category logging support
+// PAK 2018-10-25 : Added PEGKit for better parsing of CALAyer descriptions
+// PAK 2018-10-23 : Added NSLogger
+
 @import QuartzCore.CATransaction;
 
 extern NSData *CAEncodeLayerTree(CALayer *layer);
@@ -20,6 +30,9 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
 @end
 
 @implementation TKRawDataRendition
+{
+
+}
 @dynamic rootLayer;
 
 - (instancetype)_initWithCUIRendition:(CUIThemeRendition *)rendition csiData:(NSData *)csiData key:(CUIRenditionKey *)key {
@@ -50,7 +63,6 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
             *dataBytes = NULL;
         }
     }
-    
     return self;
 }
 
@@ -77,6 +89,48 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
         [super computePreviewImageIfNecessary];
     }
 }
+- (NSString *)hierarchicalDebugDescriptionOfCALayer:(CALayer *)layer level:(NSUInteger)level
+{
+
+    // Ready the description string for this level
+    NSMutableString * builtHierarchicalString = [NSMutableString string];
+
+    // Build the tab string for the current level's indentation
+    NSMutableString * tabString = [NSMutableString string];
+    for (NSUInteger i = 0; i <= level; i++)
+        [tabString appendString:@"\t"];
+    
+    // Get the view's title string if it has one
+    NSString * titleString = ([layer respondsToSelector:@selector(name)]) ? [NSString stringWithFormat:@"%@", [NSString stringWithFormat:@"\"%@\" ", [layer name]]] : @"";
+    
+    // Append our own description at this level
+    [builtHierarchicalString appendFormat:@"\n%@<%@: %p> %@(%li sublayers) <%@>", tabString, [layer className], layer, titleString, [[layer sublayers] count], [layer debugDescription]];
+    
+    // Recurse for each layer ...
+    for (CALayer * subLayer in [layer sublayers])
+        [builtHierarchicalString appendString:[self hierarchicalDebugDescriptionOfCALayer:subLayer
+                                                                              level:(level + 1)]];
+    return builtHierarchicalString;
+}
+
+- (void)logCALayerHierarchy:(CALayer *)layer level:(NSUInteger)level
+{
+    //    NSString *myCALayerHierarchy = [self hierarchicalDebugDescriptionOfCALayer:layer
+    //                                                                         level:level];
+    //
+    // PAK: Use our new parser to make sense of things.
+    
+    //    PKTokenizer *t = [PKTokenizer tokenizerWithString:myCALayerHierarchy];
+    //    PKToken *eof = [PKToken EOFToken];
+    //    PKToken *tok = nil;
+    //
+    //    while (eof != (tok = [t nextToken])) {
+    //        NSLog(@"(%@) (%.1f) : %@", tok.stringValue, tok.doubleValue, [tok debugDescription]);
+    //    }
+
+//    LoggerApp(2,@"%@", [self hierarchicalDebugDescriptionOfCALayer:layer level:level]);
+    LoggerApp(3,@"%@", [layer printHierarchy]);
+}
 
 - (CALayer *)rootLayer {
     if (!_rootLayer &&
@@ -84,6 +138,11 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
         NSDictionary *archive = [NSKeyedUnarchiver unarchiveObjectWithData:self.rawData];
         _rootLayer = [archive objectForKey:@"rootLayer"];
         _rootLayer.geometryFlipped = [[archive objectForKey:@"geometryFlipped"] boolValue];
+        
+        LoggerApp(1, @"rootLayer: %@", _rootLayer);
+        //        LoggerNetwork(1, @"rootLayer: %@", _rootLayer);
+        
+        [self logCALayerHierarchy:_rootLayer level:0];
     }
     
     return _rootLayer;

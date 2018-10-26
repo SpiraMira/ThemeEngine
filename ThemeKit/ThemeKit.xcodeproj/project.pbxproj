@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28BC9F4FC66A25390D52671B /* libPods-ThemeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC052104B081E298798BB54F /* libPods-ThemeKit.a */; };
+		8C6280B321811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C6280B121811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.h */; };
+		8C6280B421811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6280B221811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.m */; };
 		8CA50BA221777E6F00D683B2 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA50BA021777E6F00D683B2 /* Quartz.framework */; };
 		8CA50BA321777E6F00D683B2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA50BA121777E6F00D683B2 /* QuartzCore.framework */; };
+		8CB787A421828F240008A14D /* CALayer+PLHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB787A221828F240008A14D /* CALayer+PLHierarchy.h */; };
+		8CB787A521828F240008A14D /* CALayer+PLHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB787A321828F240008A14D /* CALayer+PLHierarchy.m */; };
 		FA092C841B2C1C7600D04F6D /* ThemeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA092C831B2C1C7600D04F6D /* ThemeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA514C381B3471DC002CBF5A /* TKLayoutInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = FA514C361B3471DC002CBF5A /* TKLayoutInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA514C391B3471DC002CBF5A /* TKLayoutInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA514C371B3471DC002CBF5A /* TKLayoutInformation.m */; };
@@ -98,9 +103,28 @@
 		FAE5A25A1B5194810025B40D /* TKVerifyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5A2581B5194810025B40D /* TKVerifyTool.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8C6280CC2182529B008D6B2D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3BD3B5A00D38546FAA0491A9 /* Pods-ThemeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeKit.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ThemeKit/Pods-ThemeKit.debug.xcconfig"; sourceTree = "<group>"; };
+		754152097A1DA17718A3EC58 /* Pods-ThemeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThemeKit.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ThemeKit/Pods-ThemeKit.release.xcconfig"; sourceTree = "<group>"; };
+		8C6280B121811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSKeyedArchiver+butWithNSError.h"; sourceTree = "<group>"; };
+		8C6280B221811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSKeyedArchiver+butWithNSError.m"; sourceTree = "<group>"; };
+		8C6280CA2182521D008D6B2D /* PEGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA50BA021777E6F00D683B2 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		8CA50BA121777E6F00D683B2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8CB787A221828F240008A14D /* CALayer+PLHierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+PLHierarchy.h"; sourceTree = "<group>"; };
+		8CB787A321828F240008A14D /* CALayer+PLHierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+PLHierarchy.m"; sourceTree = "<group>"; };
 		FA092C7E1B2C1C7600D04F6D /* ThemeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThemeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA092C821B2C1C7600D04F6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA092C831B2C1C7600D04F6D /* ThemeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeKit.h; sourceTree = "<group>"; };
@@ -190,6 +214,7 @@
 		FADA72D21B39FD6A00C541D9 /* CSIBitmapWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSIBitmapWrapper.h; sourceTree = "<group>"; };
 		FAE5A2571B5194810025B40D /* TKVerifyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKVerifyTool.h; path = Classes/TKVerifyTool.h; sourceTree = "<group>"; };
 		FAE5A2581B5194810025B40D /* TKVerifyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKVerifyTool.m; path = Classes/TKVerifyTool.m; sourceTree = "<group>"; };
+		FC052104B081E298798BB54F /* libPods-ThemeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThemeKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +226,7 @@
 				8CA50BA321777E6F00D683B2 /* QuartzCore.framework in Frameworks */,
 				FA606C2A1B2C1D5000F24960 /* CoreUI.framework in Frameworks */,
 				FA606C621B2C958400F24960 /* Bom.framework in Frameworks */,
+				28BC9F4FC66A25390D52671B /* libPods-ThemeKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,20 +236,34 @@
 		8CA50B9F21777E6F00D683B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C6280CA2182521D008D6B2D /* PEGKit.framework */,
 				8CA50BA021777E6F00D683B2 /* Quartz.framework */,
 				8CA50BA121777E6F00D683B2 /* QuartzCore.framework */,
+				FC052104B081E298798BB54F /* libPods-ThemeKit.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A61FDACE51671E48CD527130 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD3B5A00D38546FAA0491A9 /* Pods-ThemeKit.debug.xcconfig */,
+				754152097A1DA17718A3EC58 /* Pods-ThemeKit.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		FA092C741B2C1C7600D04F6D = {
 			isa = PBXGroup;
 			children = (
+				8C6280B121811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.h */,
+				8C6280B221811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.m */,
 				FA606C611B2C958400F24960 /* Bom.framework */,
 				FA606C291B2C1D5000F24960 /* CoreUI.framework */,
 				FA092C801B2C1C7600D04F6D /* ThemeKit */,
 				FA092C7F1B2C1C7600D04F6D /* Products */,
 				8CA50B9F21777E6F00D683B2 /* Frameworks */,
+				A61FDACE51671E48CD527130 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -336,6 +376,8 @@
 				FA606C751B2C9E5400F24960 /* NSColor+CoreUI.m */,
 				FAA5C0961B2D8CAC007DEBA1 /* CUIRenditionKey+Equal.h */,
 				FAA5C0971B2D8CAC007DEBA1 /* CUIRenditionKey+Equal.m */,
+				8CB787A221828F240008A14D /* CALayer+PLHierarchy.h */,
+				8CB787A321828F240008A14D /* CALayer+PLHierarchy.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -443,12 +485,14 @@
 				FAA5C07A1B2CD30E007DEBA1 /* CUIThemeGradientDrawing-Protocol.h in Headers */,
 				FAA5C0891B2CD81B007DEBA1 /* CUIPSDGradientEvaluator.h in Headers */,
 				FA606C601B2C8FAD00F24960 /* TKElement+Private.h in Headers */,
+				8CB787A421828F240008A14D /* CALayer+PLHierarchy.h in Headers */,
 				FA80CDFC1B309542005E5DD2 /* TKGradientStop.h in Headers */,
 				FA606C521B2C320900F24960 /* CUIThemeRendition.h in Headers */,
 				FAA5C0851B2CD81B007DEBA1 /* CUIPSDGradient.h in Headers */,
 				FAA5C0561B2CCF04007DEBA1 /* TKGradientRendition.h in Headers */,
 				FA606C311B2C1D9400F24960 /* CSIGenerator.h in Headers */,
 				FA606C3D1B2C213A00F24960 /* TKStructs.h in Headers */,
+				8C6280B321811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.h in Headers */,
 				FA606C541B2C328C00F24960 /* TKTypes.h in Headers */,
 				FAA54F631B2E1A4B00EA15F2 /* TKEffectPreset.h in Headers */,
 				FAA5C06F1B2CD094007DEBA1 /* _CUIThemeGradientRendition.h in Headers */,
@@ -496,10 +540,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA092C941B2C1C7600D04F6D /* Build configuration list for PBXNativeTarget "ThemeKit" */;
 			buildPhases = (
+				A0874DCC75F0ED07B8C42EE1 /* [CP] Check Pods Manifest.lock */,
 				FA092C791B2C1C7600D04F6D /* Sources */,
 				FA092C7A1B2C1C7600D04F6D /* Frameworks */,
 				FA092C7B1B2C1C7600D04F6D /* Headers */,
 				FA092C7C1B2C1C7600D04F6D /* Resources */,
+				8C6280CC2182529B008D6B2D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -551,6 +597,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A0874DCC75F0ED07B8C42EE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThemeKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA092C791B2C1C7600D04F6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -564,6 +635,7 @@
 				FAA5C0951B2D4013007DEBA1 /* TKRawDataRendition.m in Sources */,
 				FAA54F5C1B2E0F6900EA15F2 /* TKGradient.m in Sources */,
 				FA606C4F1B2C31C700F24960 /* TKRendition.m in Sources */,
+				8C6280B421811AD8008D6B2D /* NSKeyedArchiver+butWithNSError.m in Sources */,
 				FA606C641B2C960500F24960 /* TKHelpers.m in Sources */,
 				FAA5C0911B2D3FF0007DEBA1 /* TKPDFRendition.m in Sources */,
 				FAA5C05B1B2CCF14007DEBA1 /* TKBitmapRendition.m in Sources */,
@@ -578,6 +650,7 @@
 				FA59E4871B38402A00D03907 /* TKModelObject.m in Sources */,
 				FA80CDFD1B309542005E5DD2 /* TKGradientStop.m in Sources */,
 				FA606C681B2C9BF200F24960 /* TKColorRendition.m in Sources */,
+				8CB787A521828F240008A14D /* CALayer+PLHierarchy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +768,7 @@
 		};
 		FA092C951B2C1C7600D04F6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BD3B5A00D38546FAA0491A9 /* Pods-ThemeKit.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -719,6 +793,7 @@
 		};
 		FA092C961B2C1C7600D04F6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754152097A1DA17718A3EC58 /* Pods-ThemeKit.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;

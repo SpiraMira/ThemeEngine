@@ -13,4 +13,7 @@ extern NSString *const TKUTITypeCoreAnimationArchive;
 @property (nonatomic, strong) NSData *rawData;
 @property (nonatomic, strong) CALayer *rootLayer;
 
+- (NSString *)hierarchicalDebugDescriptionOfCALayer:(CALayer *)layer level:(NSUInteger)level;
+- (void)logCALayerHierarchy:(CALayer *)layer level:(NSUInteger)level;
+
 @end

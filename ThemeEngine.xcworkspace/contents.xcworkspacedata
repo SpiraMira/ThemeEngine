@@ -2,9 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Podfile">
+   </FileRef>
+   <FileRef
       location = "group:ThemeKit/../ThemeEngine/ThemeEngine.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ThemeKit/ThemeKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ThemeEngine/ThemeEngine.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
