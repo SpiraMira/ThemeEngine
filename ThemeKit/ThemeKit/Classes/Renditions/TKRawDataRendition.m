@@ -149,12 +149,33 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
 }
 
 - (void)setRootLayer:(CALayer *)rootLayer {
-    _rootLayer = rootLayer;
+//    _rootLayer = rootLayer;
+    
+    // Notify observers that rootLayer is changing
+    // this is required since we overrode the default
+    // synthesized setter from ObjC which does this
+    // for us. If we do not notify observers, isDirty will
+    // not be updated and the change will not save with the
+    // file.
+    [self willChangeValueForKey:@"rootLayer"];
+    if ([self.utiType isEqualToString:TKUTITypeCoreAnimationArchive]) {
+        _rootLayer = rootLayer;
+    } else {
+        _rootLayer = nil;
+    }
+    [self didChangeValueForKey:@"rootLayer"];
+
 }
 
 - (void)setRawData:(NSData *)rawData {
+//    _rawData = rawData;
+//    _rootLayer = nil;
+    
+    [self willChangeValueForKey:@"rawData"];
     _rawData = rawData;
     _rootLayer = nil;
+    [self didChangeValueForKey:@"rawData"];
+
 }
 
 + (NSDictionary *)undoProperties {
@@ -165,6 +186,7 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
         [TKRawDataProperties addEntriesFromDictionary:@{
                                                         TKKey(utiType): @"Change UTI",
                                                         TKKey(rawData): @"Change Data",
+                                                        TKKey(rootLayer): @"Change Layer",
                                                         }];
         [TKRawDataProperties addEntriesFromDictionary:[super undoProperties]];
     });
@@ -173,15 +195,19 @@ NSString *const TKUTITypeCoreAnimationArchive = @"com.apple.coreanimation-archiv
 }
 
 - (CSIGenerator *)generator {
+//    if (_rootLayer != nil) {
+//        self.rootLayer = [CALayer layer];
+////        NSLog(@"dat hookup");
+////        self.rootLayer.bounds = self.rootLayer.bounds;
+////        self.rootLayer.backgroundColor = [[NSColor greenColor] CGColor];
+//
+//        self.rawData = CAEncodeLayerTree(self.rootLayer);
+//    }
     if (_rootLayer != nil) {
-        self.rootLayer = [CALayer layer];
-//        NSLog(@"dat hookup");
-//        self.rootLayer.bounds = self.rootLayer.bounds;
-//        self.rootLayer.backgroundColor = [[NSColor greenColor] CGColor];
-        
-        self.rawData = CAEncodeLayerTree(self.rootLayer);
+        // Update the data to save used with the latest layer tree
+        _rawData = CAEncodeLayerTree(self.rootLayer);
     }
-    
+
     CSIGenerator *generator = [[CSIGenerator alloc] initWithRawData:self.rawData
                                                         pixelFormat:self.pixelFormat
                                                              layout:self.layout];
