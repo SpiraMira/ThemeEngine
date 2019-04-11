@@ -5,9 +5,6 @@
       location = "group:Podfile">
    </FileRef>
    <FileRef
-      location = "group:ThemeKit/../ThemeEngine/ThemeEngine.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:ThemeKit/ThemeKit.xcodeproj">
    </FileRef>
    <FileRef
